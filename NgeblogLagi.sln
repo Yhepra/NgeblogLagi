@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NgeblogLagi", "NgeblogLagi.csproj", "{C35FE789-5396-4100-9343-7BAAAC82524E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C35FE789-5396-4100-9343-7BAAAC82524E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35FE789-5396-4100-9343-7BAAAC82524E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35FE789-5396-4100-9343-7BAAAC82524E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35FE789-5396-4100-9343-7BAAAC82524E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAD6A8AE-FD56-48EF-A59A-1ABB3E95EAEC}
+	EndGlobalSection
+EndGlobal
