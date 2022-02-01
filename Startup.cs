@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using NgeblogLagi.Data;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace NgeblogLagi
             services.AddDbContext<AppDbContext>(o => {
                 o.UseMySQL(Configuration.GetConnectionString("mydb"));
             });
+            services.AddAuthentication("CookieAuth").AddCookie("CookieAuth", options =>
+            {
+                options.LoginPath = "/account/login";
+            });
             services.AddControllersWithViews();
         }
 
@@ -45,10 +50,22 @@ namespace NgeblogLagi
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+                    name: "AreaAdmin",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+                    );
+                endpoints.MapAreaControllerRoute(
+                    name: "AreaUser",
+                    areaName: "User",
+                    pattern: "User/{controller=Home}/{action=Index}/{id?}"
+                    );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Account}/{action=Login}/{id?}");

@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Remove="Views\Shared\_LayoutNull.cshtml" />
   </ItemGroup>
 
@@ -21,10 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\User\Controllers\" />
+    <Folder Include="Areas\User\View\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Shared\_LayoutAdmin.cshtml" />
     <None Include="Views\Shared\_LayoutNull.cshtml" />
   </ItemGroup>
 
