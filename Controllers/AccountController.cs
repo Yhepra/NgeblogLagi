@@ -39,7 +39,8 @@ namespace NgeblogLagi.Controllers
                     var claims = new List<Claim>
                     {
                         new Claim("Username", user.Username),
-                        new Claim("Role", user.Role.Name)
+                        new Claim("Role", user.Role.Name),
+                        new Claim("Name", user.Name)
                     };
 
                     await HttpContext.SignInAsync(
@@ -85,6 +86,11 @@ namespace NgeblogLagi.Controllers
         {
             await HttpContext.SignOutAsync();
             return Redirect("/");
+        }
+
+        public IActionResult Error()
+        {
+            return View();
         }
     }
 }
