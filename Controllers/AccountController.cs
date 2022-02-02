@@ -54,7 +54,7 @@ namespace NgeblogLagi.Controllers
                         return Redirect("/admin/home");
                     }
                     else if (user.Role.Id == 2){
-                        return Redirect("/user/home");
+                        return Redirect("/user/post");
                     }
 
                     return RedirectToAction(controllerName: "Home", actionName: "Index");
