@@ -1,8 +1,27 @@
-﻿@{
+﻿@model List<Post>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card card-small card-post h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a class="text-fiord-blue" href="#">@item.Title</a>
+                        </h5>
+                        <p class="card-text">@item.Content</p>
+                    </div>
+                    <div class="card-footer text-muted border-top py-3">
+                        <span class="d-inline-block">
+                            By
+                            <a class="text-fiord-blue" href="#">[name user] @*@item.User.Username*@</a> in
+                            <a class="text-fiord-blue" href="#">@item.Update_Date</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

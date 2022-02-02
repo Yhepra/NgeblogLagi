@@ -1,3 +1,5 @@
+﻿@using NgeblogLagi.Helper
+
 <!doctype html>
 <html class="no-js h-100" lang="en">
 <head>
@@ -43,15 +45,9 @@
                 <div class="nav-wrapper">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">
+                            <a class="nav-link active" href="/user/post/index">
                                 <i class="material-icons">edit</i>
                                 <span>Blog Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="components-blog-posts.html">
-                                <i class="material-icons">vertical_split</i>
-                                <span>Blog Posts</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -61,27 +57,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="form-components.html">
-                                <i class="material-icons">view_module</i>
-                                <span>Forms &amp; Components</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link " href="tables.html">
                                 <i class="material-icons">table_chart</i>
-                                <span>Tables</span>
+                                <span>List Post</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="user-profile-lite.html">
                                 <i class="material-icons">person</i>
                                 <span>User Profile</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="errors.html">
-                                <i class="material-icons">error</i>
-                                <span>Errors</span>
                             </a>
                         </li>
                     </ul>
@@ -105,14 +89,11 @@
                         <ul class="navbar-nav border-left flex-row ">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="d-none d-md-inline-block">Sierra Brooks</span>
+                                    <h5 class="d-none d-md-inline-block">@User.GetName()</h5>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-small">
                                     <a class="dropdown-item" href="user-profile-lite.html">
                                         <i class="material-icons">&#xE7FD;</i> Profile
-                                    </a>
-                                    <a class="dropdown-item" href="components-blog-posts.html">
-                                        <i class="material-icons">vertical_split</i> Blog Posts
                                     </a>
                                     <a class="dropdown-item" href="add-new-post.html">
                                         <i class="material-icons">note_add</i> Add New Post

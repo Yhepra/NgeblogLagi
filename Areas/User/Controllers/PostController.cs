@@ -18,6 +18,11 @@ namespace NgeblogLagi.Areas.User.Controllers
         public IActionResult Index()
         {
             var post = _context.Posts.ToList();
+            var jmlpost = _context.Posts.Count();
+            var jmluser = _context.Users.Count();
+
+            ViewBag.post = jmlpost;
+            ViewBag.user = jmluser;
             return View(post);
         }
     }

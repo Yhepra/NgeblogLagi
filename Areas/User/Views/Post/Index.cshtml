@@ -5,6 +5,7 @@
 
 @{
     Layout = "_LayoutUser";
+    ViewData["Title"] = "Home Page";
 }
 
 <!-- Page Header -->
@@ -22,8 +23,8 @@
             <div class="card-body p-0 d-flex">
                 <div class="d-flex flex-column m-auto">
                     <div class="stats-small__data text-center">
-                        <span class="stats-small__label text-uppercase">Posts</span>
-                        <h6 class="stats-small__value count my-3">9999</h6>
+                        <span class="stats-small__label text-uppercase">All users' posts</span>
+                        <h6 class="stats-small__value count my-3">@ViewBag.post</h6>
                     </div>
                 </div>
             </div>
@@ -35,7 +36,7 @@
                 <div class="d-flex flex-column m-auto">
                     <div class="stats-small__data text-center">
                         <span class="stats-small__label text-uppercase">Active Users</span>
-                        <h6 class="stats-small__value count my-3">9999</h6>
+                        <h6 class="stats-small__value count my-3">@ViewBag.user</h6>
                     </div>
                 </div>
             </div>
@@ -44,27 +45,27 @@
 </div>
 
 <div class="row">
-   @foreach (var item in Model)
-   {
-       <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <div class="card card-small card-post h-100">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a class="text-fiord-blue" href="#">@item.Title</a>
-                </h5>
-                <p class="card-text">@item.Content</p>
-            </div>
-            <div class="card-footer text-muted border-top py-3">
-                <span class="d-inline-block">
-                    By
-                    <a class="text-fiord-blue" href="#">xxx@*@item.User.Name*@</a> in
-                    <a class="text-fiord-blue" href="#">@item.Update_Date</a>
-                </span>
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card card-small card-post h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a class="text-fiord-blue" href="#">@item.Title</a>
+                    </h5>
+                    <p class="card-text">@item.Content</p>
+                </div>
+                <div class="card-footer text-muted border-top py-3">
+                    <span class="d-inline-block">
+                        By
+                        <a class="text-fiord-blue" href="#">[name user] @*@item.User.Username*@</a> in
+                        <a class="text-fiord-blue" href="#">@item.Update_Date</a>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-   }
-    
+    }
+
 </div>
 
 

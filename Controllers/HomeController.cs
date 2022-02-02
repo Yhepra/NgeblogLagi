@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NgeblogLagi.Data;
 using NgeblogLagi.Models;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,18 @@ namespace NgeblogLagi.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDbContext c)
         {
             _logger = logger;
+            _context = c;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var data = _context.Posts.ToList();
+            return View(data);
         }
 
         public IActionResult Privacy()
