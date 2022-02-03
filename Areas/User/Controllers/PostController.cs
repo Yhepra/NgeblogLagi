@@ -63,5 +63,15 @@ namespace NgeblogLagi.Areas.User.Controllers
             }
             return View(parameter);
         }
+
+        public IActionResult ListEdit()
+        {
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
     }
 }

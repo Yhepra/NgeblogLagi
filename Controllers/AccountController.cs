@@ -74,10 +74,17 @@ namespace NgeblogLagi.Controllers
         [HttpPost]
         public IActionResult Register(User datanya)
         {
-            var role = _context.Roles.Where(x => x.Id == 2).FirstOrDefault();
-            datanya.Role = role;
-            _context.Add(datanya);
-            _context.SaveChanges();
+            try
+            {
+                var role = _context.Roles.Where(x => x.Id == 2).FirstOrDefault();
+                datanya.Role = role;
+                _context.Add(datanya);
+                _context.SaveChanges();
+            }
+            catch
+            {
+
+            }
 
             return RedirectToAction("Login");
         }
