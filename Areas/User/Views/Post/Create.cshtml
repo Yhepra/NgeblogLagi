@@ -1,0 +1,55 @@
+﻿@using NgeblogLagi.Models
+
+@model Post
+
+@{
+    Layout = "_LayoutUser";
+    ViewData["Title"] = "Create Blog";
+}
+
+
+<div class="main-content-container container-fluid px-4">
+    <div class="page-header row no-gutters py-4">
+        <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+            <span class="text-uppercase page-subtitle">Blog Posts</span>
+            <h3 class="page-title">Add New Post</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-15">
+            <!-- Add New Post Form -->
+            <div class="card card-small mb-3">
+                <div class="card-body">
+                    <form asp-action="create" method="post" class="add-new-post">
+                        <input asp-for="title" class="form-control form-control-lg mb-3" name="title" placeholder="Your Post Title">
+                        <div id="editor" class="add-new-post__editor mb-3">
+
+                        </div>
+                        <textarea asp-for="Content" class="d-none" id="cc" name="Content" placeholder="Type here for content"></textarea>
+                        <button type="submit" class="btn btn-sm btn-accent ml-auto mr-0">
+                            <i class="material-icons">file_copy</i> Publish
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- / Add New Post Form -->
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var quill = new Quill('#editor', {
+                modules: { toolbar: true },
+                theme: 'snow'
+            });
+
+            quill.on('text-change', function (delta, oldDelta, source) {
+                $("#cc").val(quill.getText())
+                console.log(quill.getText())
+            });
+        });
+    </script>
+}
