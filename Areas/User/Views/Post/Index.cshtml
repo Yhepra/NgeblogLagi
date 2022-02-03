@@ -1,7 +1,7 @@
 ﻿@using NgeblogLagi.Helper
 @using NgeblogLagi.Models
 
-@model List<Post>
+@model List<PostDTO>
 
 @{
     Layout = "_LayoutUser";
@@ -58,7 +58,7 @@
                 <div class="card-footer text-muted border-top py-3">
                     <span class="d-inline-block">
                         By
-                        <a class="text-fiord-blue" href="#">[name user] @*@item.User.Username*@</a> in
+                        <a class="text-fiord-blue" href="#">@item.Name</a> in
                         <a class="text-fiord-blue" href="#">@item.Update_Date</a>
                     </span>
                 </div>

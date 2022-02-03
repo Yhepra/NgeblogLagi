@@ -13,4 +13,12 @@ namespace NgeblogLagi.Models
         public DateTime Update_Date { get; set; }
         public User User { get; set; }
     }
+
+    public class PostDTO
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Name { get; set; }
+        public DateTime Update_Date { get; set; }
+    }
 }

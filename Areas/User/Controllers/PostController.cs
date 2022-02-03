@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NgeblogLagi.Data;
 using NgeblogLagi.Helper;
 using NgeblogLagi.Models;
@@ -21,7 +22,16 @@ namespace NgeblogLagi.Areas.User.Controllers
         }
         public IActionResult Index()
         {
-            var post = _context.Posts.ToList();
+            var post = _context.Posts
+                .Include(x => x.User)
+                .Select(x => new PostDTO()
+                {
+                    Title = x.Title,
+                    Content = x.Content,
+                    Name = x.User.Name,
+                    Update_Date = x.Update_Date
+                }).ToList();
+
             var jmlpost = _context.Posts.Count();
             var jmluser = _context.Users.Count();
 

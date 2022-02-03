@@ -1,5 +1,7 @@
 ﻿@model User
+
 @{
+    ViewData["Title"] = "Login";
     Layout = "_LayoutNull";
     if (!string.IsNullOrEmpty(ViewBag.pesan))
     {
@@ -16,7 +18,7 @@
         <div class="card-body">
             <h2 class="card-title mb-3">Login</h2>
             <h6 class="card-subtitle text-muted mb-5 fw-bold">Please login to use this site!</h6>
-            <form asp-for="Login" method="post">            
+            <form asp-for="Login" method="post">
                 <div class="mb-4">
                     <label for="username" class="form-label">Username*</label>
                     <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Your Username">
@@ -25,17 +27,17 @@
                     <label for="password" class="form-label">Password*</label>
                     <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Your Password">
                 </div>
-@*
-                <div class="d-flex justify-content-between">
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                @*
+                    <div class="d-flex justify-content-between">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <div>
+                            <a href="#" class="link">Forgot Password ?</a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="#" class="link">Forgot Password ?</a>
-                    </div>
-                </div>
-*@
+                *@
                 <div class="d-grid mt-5">
                     <button type="submit" class="btn btn-success btn-login">Login</button>
                 </div>
